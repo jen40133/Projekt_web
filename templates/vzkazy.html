@@ -15,11 +15,21 @@
 </form>
 
 <h2>Nástěnka:</h2>
+{% for login, body, datetime, id in response %}
 
 <div class="messageboard">
-{% for login, body, datetime in response %}
-  <p>{{login}} {{body}} {{datetime}}</p>
-{% endfor %}
+  <p class="message_login"> <strong>{{login}}</strong> ({{d.fromisoformat(datetime).strftime('%d.%_m.%Y %H:%M')}}):</p>
+  
+  {% if session["user"] == login %}
+    <form action="">
+      <input type="hidden" name="id" value="{{id}}"> 
+      <button type="submit">Vymazat</button>
+    </form>
+  {% endif %}
+
+  <pre class="message_body">{{body }}</pre>
 </div>
+
+{% endfor %}
 
 {% endblock obsah %}

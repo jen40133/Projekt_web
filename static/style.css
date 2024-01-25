@@ -186,5 +186,19 @@ h2 {
 }
 
 .messageboard {
+    
+    background-color: lightgray;
+    margin: 1ex 2ex 1ex 2ex;
+    padding: 1ex;
+    border-radius: 7px;
+    border: black 1px solid;
+    
+}
+
+.messageboard .message_body {
     margin-left: 15px;
+}
+
+.messageboard .form {
+    float: right;
 }
