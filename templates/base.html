@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>{%block title%}NHL 2023/24{%endblock%}</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='NHL-Logo.png') }}" alt="NHL logo">
+            <span>NHL sezóna 2023/24</span>
+        </div>
+        <div class="user-menu">
+            <a href="{{ url_for('login') }}">Přihlášení</a>
+            <a href="{{ url_for('register') }}">Registrace</a>
+            <p>
+            {% if "user" in session %}
+            Přihlášen: {{ session["user"]}}    
+            <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+            Nikdo není přihlášen
+            {% endif %}
+            </p>
+            
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">NHL</a></li>
+            <li><a href="{{ url_for('tymy') }}">Přehled týmů</a></li>
+            <li><a href="{{ url_for('tabulka') }}">Tabulka umístění</a></li>
+            <li><a href="{{ url_for('strelci') }}">Tabulka střelců</a></li>
+            <li><a href="{{ url_for('vzkazy') }}">Vzkazy</a></li>
+           
+        </ul>
+    </nav>
+
+{% block obsah %}
+
+    <section class="content">
+        <div class="item">
+            <img src="{{ url_for('static', filename='NHL-Logo.png') }}" alt="Stanley Cup">
+            <div class="item-info">
+                <h2>NHL</h2>
+                <p>National Hockey League (Národní hokejová liga) je profesionální soutěž v ledním hokeji, které se účastní kluby ze Spojených států amerických a Kanady. Je považována za nejprestižnější hokejovou ligu světa.Sezóna je rozdělena na dvě části. První je tzv. základní část, v níž každé družstvo odehraje 82 utkání. Po skončení základní části nastává druhé kolo, tzv. play off. </p> 
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="{{ url_for('static', filename='Divisions.png') }}" alt="Image 2">
+            <div class="item-info">
+                <h2>Rozdělení týmů</h2>
+                <p>NHL se dělí na dvě konference, a to východní a západní. Každá z nich se ještě dále dělí na dvě divize. Ve východní i západní konferenci je aktuálně celkem šestnáct týmů. Současný herní systém byl zaveden v sezoně 2013-2014.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="{{ url_for('static', filename='Playoffs.png') }}" alt="Image 3">
+            <div class="item-info">
+                <h2>Playoffs</h2>
+                <p>Do play off postoupí nejlepší tři týmy z každé divize. Dále dvě mužstva z každé konference, která budou mít nejvyšší počet bodů bez ohledu na divize. Tým s nejvyšším počtem bodů po základní části z obou konferencí obdrží Presidents' Trophy. V každé konferenci hraje play off 8 týmů. Play off se hraje jako vyřazovací turnaj, který se hraje na čtyři vítězná utkání. Výše nasazený tým má výhodu domácího prostředí – čtyři z případných sedmi utkání série jsou hrány na jeho hřišti (první, druhé, případné páté a sedmé). Obě konference mají nezávislá play off, týmy z opačných konferencí se tak mohou potkat až ve finále Stanley Cupu.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="{{ url_for('static', filename='Stanley-Cup.png') }}" alt="Image 4">
+            <div class="item-info">
+                <h2>Stanley cup</h2>
+                <p>Stanley Cup je hokejová trofej udělovaná každoročně vítěznému týmu playoff NHL. Bývá též nazývaný The Cup, The Holy Grail, neb oLord Stanley's Mug . V ostatních třech hlavních severoamerických soutěžích (NBA, MLB a NFL) se pohár vyrábí každý rok nový, ale Stanley Cup koluje. Jeho držitel si ho může ponechat do doby, než ho vyhraje jiný tým. Na podstavec poháru jsou vyrývána jména trenérů, funkcionářů a hráčů, kteří se zasloužili o získání poháru pro jednotlivá mužstva.</p>
+            </div>
+        </div>
+    </section>
+
+{% endblock obsah %}
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block obsah %}
+
+<h1>Vzkazy:</h1>
+
+<h2>Vložit vzkaz</h2>
+
+<form method="post" class="form_vzkazy">
+  <textarea name="vzkaz" rows="7" cols="80"></textarea>
+  <p>
+    <button type="reset">Vymazat</button>
+    <button type="submit">Odeslat</button>
+  </p>
+</form>
+
+<h2>Nástěnka:</h2>
+
+<div class="messageboard">
+{% for login, body, datetime in response %}
+  <p>{{login}} {{body}} {{datetime}}</p>
+{% endfor %}
+</div>
+
+{% endblock obsah %}

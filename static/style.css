@@ -1,0 +1,190 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ /* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 240px; 
+    height: 135px; 
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 65px; 
+}
+/* User menu*/
+
+.user-menu {
+    background-color: #ddd;
+    color: #333;
+    font-size: 20px; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    
+}
+
+.user-menu a {
+    color:darkgoldenrod;
+}
+
+/* Menu */
+
+nav {
+    background-color: #ddd;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    font-size: 30px;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+
+nav a:last-child{
+    margin-right: 0;
+}
+ 
+/*Base*/
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item {
+    width: 45%;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.item img {
+    max-width: 20%;
+    height: auto;
+    margin-right: 10px;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.item-info p {
+    font-size: 18px;
+    color: #555;
+}
+ 
+/* Flash message */
+
+.message {
+    width: 45%;
+    border:#bb8800 solid 2px;
+    color: #333;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1ex;
+    text-align: center;
+    border-radius: 10px;
+}
+  
+  .success {
+    border-color: green;
+}
+  
+  .error {
+    border-color: red;
+}
+
+/* tymy */
+
+h1 {
+    size:75px;
+    margin-left: 150px;
+}
+
+.conference {
+    margin-bottom: 30px;
+}
+
+.division {
+    margin-bottom: 20px;
+}
+
+/* tabulky */
+
+section.content table {
+    width: 40%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+section.content th {
+    background-color: darkgoldenrod;
+    padding: 10px;
+    text-align: center;
+}
+
+section.content td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+section.content tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+h2 {
+    margin-left: 25px;
+}
+
+.form_vzkazy {
+    margin-left: 15px;
+
+}
+
+.messageboard {
+    margin-left: 15px;
+}
