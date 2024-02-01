@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block obsah %}
+
+<h1>Editace vzkazu:</h1>
+
+<form method="post" class="form_vzkazy">
+  <textarea name="body" rows="7" cols="80">{{body}}</textarea>
+  <p>
+    <button type="submit">Uložit</button>
+    <button type="reset">Vymazat</button>
+  </p>
+</form>
+
+{% endblock obsah %}

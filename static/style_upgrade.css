@@ -1,0 +1,184 @@
+/* Reset */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+}
+
+.user-menu {
+    background-color: #ddd;
+    color: #333;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.user-menu a {
+    color: darkgoldenrod;
+}
+
+nav {
+    background-color: #ddd;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+nav a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item {
+    width: 45%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.item img {
+    max-width: 20%;
+    height: auto;
+    margin-right: 10px;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.item-info p {
+    font-size: 16px;
+    color: #555;
+}
+
+.message {
+    width: 45%;
+    border: 2px solid #bb8800;
+    color: #333;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.success {
+    border-color: green;
+}
+
+.error {
+    border-color: red;
+}
+
+h1 {
+    font-size: 36px;
+    margin-left: 20px;
+}
+
+.conference,
+.division {
+    margin-bottom: 20px;
+}
+
+section.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+section.content th,
+section.content td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+section.content th {
+    background-color: darkgoldenrod;
+    color: #fff;
+}
+
+section.content tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+h2 {
+    margin-left: 25px;
+}
+
+.form_vzkazy {
+    margin-left: 15px;
+}
+
+.messageboard {
+    background-color: lightgray;
+    margin: 10px 20px;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.messageboard .message_body {
+    margin-left: 15px;
+}
+
+.messageboard .form {
+    float: right;
+}

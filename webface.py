@@ -55,15 +55,47 @@ def vzkazy_post():
         # user_id = list(response)[0]
         user_id = list(response.fetchone())[0]
 
-    vzkaz = request.form.get("vzkaz")
+    vzkaz = request.form.get("body")
     if vzkaz:
         with SQLite("data.sqlite") as cursor:
             cursor.execute(
                 "INSERT INTO message (user_id, body, datetime) VALUES (?,?,?)",
-                [user_id, vzkaz, datetime.datetime.now()],
+                [user_id, vzkaz, datetime.datetime.now()]
             )
     return redirect(url_for("vzkazy"))
 
+@app.route("/vzkazy/del/", methods=["POST"])
+def vzkazy_del():
+    id = request.form.get("id")
+    if id:
+        with SQLite("data.sqlite") as cursor:
+            response = cursor.execute(
+                "SELECT id FROM user WHERE login=?", [session["user"]]
+            )
+            user_id = response.fetchone()[0]
+            cursor.execute(
+                "DELETE FROM message WHERE id=? and user_id=?", [id, user_id] 
+            )
+    return redirect(url_for("vzkazy"))
+
+@app.route("/vzkazy/edit/<int:id>")
+def vzkazy_edit(id):
+    with SQLite("data.sqlite") as cursor:
+        response = cursor.execute("SELECT body FROM message WHERE id=?", [id])
+        body = response.fetchone()[0]
+    return render_template("vzkazy_edit.html", body=body)
+
+
+@app.route("/vzkazy/edit/<int:id>", methods=["POST"])
+def vzkazy_edit_post(id):
+    body = request.form.get("body")
+    if body:
+        with SQLite("data.sqlite") as cursor:
+            cursor.execute(
+                "UPDATE message SET body=? WHERE id=? and user_id="
+                "(SELECT id FROM user WHERE login=?)", [body, id, session["user"] ]
+            )
+    return redirect(url_for("vzkazy"))
 
 #login
 @app.route("/login/", methods=["GET"])

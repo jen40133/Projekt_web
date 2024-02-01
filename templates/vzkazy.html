@@ -7,27 +7,32 @@
 <h2>Vložit vzkaz</h2>
 
 <form method="post" class="form_vzkazy">
-  <textarea name="vzkaz" rows="7" cols="80"></textarea>
+  <textarea name="body" rows="7" cols="80"></textarea>
   <p>
-    <button type="reset">Vymazat</button>
     <button type="submit">Odeslat</button>
+    <button type="reset">Vymazat</button>
   </p>
 </form>
 
 <h2>Nástěnka:</h2>
+
 {% for login, body, datetime, id in response %}
 
 <div class="messageboard">
   <p class="message_login"> <strong>{{login}}</strong> ({{d.fromisoformat(datetime).strftime('%d.%_m.%Y %H:%M')}}):</p>
   
   {% if session["user"] == login %}
-    <form action="">
+    <form action="{{url_for('vzkazy_del')}}" method="post">
       <input type="hidden" name="id" value="{{id}}"> 
       <button type="submit">Vymazat</button>
     </form>
+
+    <form action="{{url_for('vzkazy_edit', id=id)}}" method="get"> 
+      <button type="submit">Editovat</button>
+    </form>
   {% endif %}
 
-  <pre class="message_body">{{body }}</pre>
+  <pre class="message_body">{{body}}</pre>
 </div>
 
 {% endfor %}
